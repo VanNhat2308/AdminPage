@@ -14,19 +14,34 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="all.css" />
   </head>
-  <body class="p-2 bg-[#eef5ed]">
+  <body class="px-4 lg:p-2 bg-[#f5f7fa]">
+<!-- hidden nav -->
+ <div class="flex py-4 px-6 bg-white items-center justify-between rounded-xl my-5 lg:hidden">
+ <div id="btnNavbar">
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+</svg>
+ </div>
+   <div
+            class="w-8 h-8 flex justify-center items-center rounded-full bg-[#065751] text-2xl text-white shadow-lg"
+          >
+            J
+          </div>
+
+ </div>
+
     <div class="flex w-full h-full gap-5">
       <!-- Sidebar -->
-      <div
-        class="flex flex-col items-center w-[25%] bg-[#094c4f] rounded-xl py-4 space-y-4"
+      <div id="sidebar"
+        class="sidebar_ w-[90%] lg:flex flex-col items-center sm:w-[50%] bg-[#094c4f] rounded-0 py-4 space-y-4 lg:rounded-xl lg:w-[25%]"
       >
         <!-- Logo -->
-        <div class="w-[90%] flex items-center gap-2">
+        <div class="w-[90%] flex items-center gap-2 mx-auto lg:mx-0">
           <img class="w-17 h-20 mt-2" src="img/logoEco.png" alt="Logo" />
           <span class="text-white font-medium text-4xl">Ecologico</span>
         </div>
         <!-- Search Input -->
-        <div class="relative w-[90%] mt-5">
+        <div class="mx-auto relative w-[90%] mt-5 lg:mx-0">
           <input
             class="bg-[#09474a] w-full p-3 pl-10 border-none rounded-md focus:outline-none placeholder:text-white"
             type="text"
@@ -45,7 +60,7 @@
             />
           </svg>
         </div>
-        <hr class="text-gray-400 w-[90%] mt-3" />
+        <hr class="mx-auto text-gray-400 w-[90%] mt-3 lg:mx-0" />
         <!-- nav -->
         <ul class="w-full flex-column items-center">
           <li
@@ -146,7 +161,7 @@
           </li>
         </ul>
         <!--  -->
-        <hr class="text-gray-400 w-[90%] mt-3" />
+        <hr class="mx-auto text-gray-400 w-[90%] mt-3 lg:mx-0" />
         <!-- nav -->
         <ul class="w-full flex-column items-center">
           <li
@@ -196,8 +211,8 @@
           </li>
         </ul>
         <!--  -->
-        <hr class="text-gray-400 w-[90%]" />
-        <div class="w-[90%] flex-column p-5 bg-[#1b6665] rounded-md">
+        <hr class="text-gray-400 w-[90%] mx-auto lg:mx-0" />
+        <div class="w-[90%] flex-column p-5 bg-[#1b6665] rounded-md mx-auto lg:mx-0" >
           <div>
             <span class="text-bold text-white text-3xl">10,472 </span>
             <span class="text-white text-lg">codes available</span>
@@ -210,7 +225,7 @@
         </div>
 
         <!-- setting -->
-        <div class="flex gap-4 w-[90%] mt-50">
+        <div class="setting_ flex gap-4 w-[90%] mt-50 mx-auto lg:mx-0">
           <div
             class="w-14 h-14 flex justify-center items-center rounded-full bg-[#065751] text-2xl text-white shadow-lg"
           >
@@ -247,7 +262,7 @@
           <span>></span>
           <a href="#" class="hover:text-blue-600">AGM</a>
         </div>
-        <div class="flex mt-3">
+        <div class="flex flex-col lg:flex-row mt-3">
           <div class="flex flex-col">
             <span class="text-3xl font-bold">OR-TEC 12V / 7Ah AGM BATTERY</span>
             <span
@@ -269,7 +284,7 @@
             </span>
           </div>
 
-          <div class="flex gap-2 ml-auto">
+          <div class="flex gap-2 mt-5 lg:ml-auto lg:mt:0">
             <div class="flex flex-col p-2 border border-gray-300 rounded-md">
               <span>GTIN</span>
               <img class="w-20 h-10" src="img/qrCode.png" alt="" />
@@ -311,7 +326,7 @@
             Components <span class="p-1 bg-gray-200 text-black">7</span>
           </button>
         </div>
-        <div class="flex mt-15 gap-10">
+        <div class="flex flex-col lg:flex-row mt-15 gap-10">
           <div class="flex flex-col">
             <div class="flex gap-5">
               <div class="flex bg-[#f2fafc] items-center gap-3 p-3 rounded-md">
@@ -663,5 +678,9 @@
         </div>
       </div>
     </div>
+
+<script src="navbar.js"></script>
+
+
   </body>
 </html>
