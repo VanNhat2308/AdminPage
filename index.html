@@ -14,31 +14,31 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="all.css" />
   </head>
-  <body class="px-4 lg:p-2 bg-[#f5f7fa]">
+  <body class="lg:px-4 lg:p-2 bg-[#f5f7fa]">
 <!-- hidden nav -->
- <div class="flex py-4 px-6 bg-white items-center justify-between rounded-xl my-5 lg:hidden">
+ <div class="flex py-4 px-6 bg-white items-center justify-between navBarHiden_">
  <div id="btnNavbar">
   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
 </svg>
  </div>
    <div
-            class="w-8 h-8 flex justify-center items-center rounded-full bg-[#065751] text-2xl text-white shadow-lg"
+            class="w-8 h-8 flex justify-center items-center rounded-full bg-[#065751] text-2xl text-white shadow-xl"
           >
             J
           </div>
 
  </div>
 
-    <div class="flex w-full h-full gap-5">
+    <div class="flex w-full h-full lg:gap-5">
       <!-- Sidebar -->
       <div id="sidebar"
-        class="sidebar_ w-[90%] lg:flex flex-col items-center sm:w-[50%] bg-[#094c4f] rounded-0 py-4 space-y-4 lg:rounded-xl lg:w-[25%]"
+        class="sidebar_ w-[80%] flex flex-col items-center sm:w-[50%] bg-[#094c4f] rounded-0 py-4 space-y-4 lg:rounded-xl"
       >
         <!-- Logo -->
         <div class="w-[90%] flex items-center gap-2 mx-auto lg:mx-0">
           <img class="w-17 h-20 mt-2" src="img/logoEco.png" alt="Logo" />
-          <span class="text-white font-medium text-4xl">Ecologico</span>
+          <span class="text-white font-medium text-3xl lg:text-4xl">Ecologico</span>
         </div>
         <!-- Search Input -->
         <div class="mx-auto relative w-[90%] mt-5 lg:mx-0">
@@ -67,7 +67,7 @@
             class="w-full py-4 hover:bg-[#09474a] hover:shadow-lg transition duration-300"
           >
             <a
-              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-2xl"
+              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
               href="#"
             >
               <svg
@@ -90,7 +90,7 @@
             class="w-full py-4 hover:bg-[#09474a] hover:shadow-lg transition duration-300"
           >
             <a
-              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-2xl"
+              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
               href="#"
             >
               <svg
@@ -114,7 +114,7 @@
             class="w-full py-4 hover:bg-[#09474a] hover:shadow-lg transition duration-300"
           >
             <a
-              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-2xl"
+              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
               href="#"
             >
               <svg
@@ -138,7 +138,7 @@
             class="w-full py-4 hover:bg-[#09474a] hover:shadow-lg transition duration-300"
           >
             <a
-              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-2xl"
+              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
               href="#"
             >
               <svg
@@ -168,7 +168,7 @@
             class="w-full py-4 hover:bg-[#09474a] hover:shadow-lg transition duration-300"
           >
             <a
-              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-2xl"
+              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
               href="#"
             >
               <svg
@@ -191,7 +191,7 @@
             class="w-full py-4 hover:bg-[#09474a] hover:shadow-lg transition duration-300"
           >
             <a
-              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-2xl"
+              class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
               href="#"
             >
               <svg
@@ -212,27 +212,27 @@
         </ul>
         <!--  -->
         <hr class="text-gray-400 w-[90%] mx-auto lg:mx-0" />
-        <div class="w-[90%] flex-column p-5 bg-[#1b6665] rounded-md mx-auto lg:mx-0" >
+        <div class="order_ w-[90%] flex-column p-5 bg-[#1b6665] rounded-md mx-auto lg:mx-0" >
           <div>
-            <span class="text-bold text-white text-3xl">10,472 </span>
+            <span class="text-bold text-white text-xl lg:text-3xl">10,472 </span>
             <span class="text-white text-lg">codes available</span>
           </div>
           <button
-            class="p-4 w-full rounded-md bg-white mt-3 cursor-pointer font-medium text-2xl"
+            class="p-4 w-full rounded-md bg-white mt-3 cursor-pointer font-medium text-xl lg:text-2xl"
           >
             order more
           </button>
         </div>
 
         <!-- setting -->
-        <div class="setting_ flex gap-4 w-[90%] mt-50 mx-auto lg:mx-0">
+        <div class="setting_ flex gap-4 w-[90%] mt-auto mx-auto lg:mx-0">
           <div
             class="w-14 h-14 flex justify-center items-center rounded-full bg-[#065751] text-2xl text-white shadow-lg"
           >
             J
           </div>
           <div class="flex flex-col">
-            <span class="text-white text-2xl">John Doe</span>
+            <span class="text-white text-xl lg:text-2xl">John Doe</span>
             <span class="text-white">Jdoe@gmail.com</span>
           </div>
           <div
@@ -254,7 +254,7 @@
         </div>
       </div>
       <!-- Main Content -->
-      <div class="flex-1 p-4 bg-white rounded-xl">
+      <div class="main_ flex-1 p-5 lg:p-4 bg-white lg:rounded-xl">
         <div class="flex items-center space-x-2 text-gray-600 text-lg">
           <a href="#" class="hover:text-blue-600">Car parts</a>
           <span>></span>
@@ -284,7 +284,7 @@
             </span>
           </div>
 
-          <div class="flex gap-2 mt-5 lg:ml-auto lg:mt:0">
+          <div class="flex flex-wrap gap-2 mt-5 lg:ml-auto lg:mt:0">
             <div class="flex flex-col p-2 border border-gray-300 rounded-md">
               <span>GTIN</span>
               <img class="w-20 h-10" src="img/qrCode.png" alt="" />
@@ -328,7 +328,7 @@
         </div>
         <div class="flex flex-col lg:flex-row mt-15 gap-10">
           <div class="flex flex-col">
-            <div class="flex gap-5">
+            <div class="statusBar_ flex flex-col lg:flex-row gap-5">
               <div class="flex bg-[#f2fafc] items-center gap-3 p-3 rounded-md">
                 <div class="p-2 rounded-md bg-[#e3f3fc]">
                   <svg
@@ -448,23 +448,23 @@
               </div>
               <!-- ct item -->
               <div class="ml-10 mt-5">
-                <div class="flex items-center p-3 rounded-md bg-[#f5f7fa]">
+                <div class="flex flex-col lg:flex-row lg:items-center p-3 rounded-md bg-[#f5f7fa]">
                   <span class="text-xl">Preparing for departure</span>
-                  <span class="text-gray-600 pr-5 ml-auto"
+                  <span class="text-gray-600 pr-5 lg:ml-auto"
                     >2023-04-01 8:15</span
                   >
                 </div>
-                <div class="flex mt-2 items-center p-3 rounded-md bg-[#f5f7fa]">
+                <div class="flex mt-2 flex-col lg:flex-row lg:items-center p-3 rounded-md bg-[#f5f7fa]">
                   <span class="text-xl"
                     >Assigned to the shelf <b>KBV567-01</b></span
                   >
-                  <span class="text-gray-600 pr-5 ml-auto"
+                  <span class="text-gray-600 pr-5 lg:ml-auto"
                     >2023-03-28 16:01</span
                   >
                 </div>
-                <div class="flex mt-2 items-center p-3 rounded-md bg-[#f5f7fa]">
+                <div class="flex mt-2 flex-col lg:flex-row lg:items-center p-3 rounded-md bg-[#f5f7fa]">
                   <span class="text-xl">Arrived</span>
-                  <span class="text-gray-600 pr-5 ml-auto"
+                  <span class="text-gray-600 pr-5 lg:ml-auto"
                     >2023-03-28 15:23</span
                   >
                 </div>
@@ -488,10 +488,12 @@
                   </svg>
                 </div>
                 <div class="flex w-full ml-10 items-center py-3 rounded-md">
-                  <span class="text-xl pl-3">Local transportation</span>
-                  <span class="text-gray-600 pr-5 ml-auto"
-                    >2023-03-27 - 2023-03-28</span
-                  >
+                  <div class="flex w-full flex-col lg:flex-row lg:items-center">
+                    <span class="text-xl pl-3">Local transportation</span>
+                    <span class="text-gray-600 pl-3 lg:pl-0 lg:pr-5 lg:ml-auto"
+                      >2023-03-27 - 2023-03-28</span>
+                  </div>
+                  
                   <div class="text-gray-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -528,15 +530,17 @@
                   </svg>
                 </div>
                 <div class="flex w-full ml-10 items-center py-3 rounded-md">
-                  <div class="flex flex-col">
-                    <span class="text-2xl pl-3">Logistic hub</span>
-                    <span class="pl-3 text-gray-600 text-base"
-                      >Roberta de Pielo 6,Gdansk, Poland</span
+                  <div class="flex w-full flex-col lg:flex-row lg:items-center">
+                    <div class="flex flex-col">
+                      <span class="text-2xl pl-3">Logistic hub</span>
+                      <span class="pl-3 text-gray-600 text-base"
+                        >Roberta de Pielo 6,Gdansk, Poland</span
+                      >
+                    </div>
+                    <span class="text-gray-600 pl-3 lg:pl-0 lg:pr-5 lg:ml-auto"
+                      >2023-03-27 - 2023-03-28</span
                     >
                   </div>
-                  <span class="text-gray-600 pr-5 ml-auto"
-                    >2023-03-27 - 2023-03-28</span
-                  >
                   <div class="text-gray-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -573,10 +577,12 @@
                   </svg>
                 </div>
                 <div class="flex w-full ml-10 items-center py-3 rounded-md">
-                  <span class="text-xl pl-3">International transportation</span>
-                  <span class="text-gray-600 pr-5 ml-auto"
-                    >2023-03-27 - 2023-03-28</span
-                  >
+                  <div class="flex w-full flex-col lg:flex-row lg:items-center">
+                    <span class="text-xl pl-3">International transportation</span>
+                    <span class="text-gray-600 pl-3 lg:pl-0 lg:pr-5 lg:ml-auto"
+                      >2023-03-27 - 2023-03-28</span
+                    >
+                  </div>
                   <div class="text-gray-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -625,15 +631,17 @@
                   </svg>
                 </div>
                 <div class="flex w-full ml-10 items-center py-3 rounded-md">
-                  <div class="flex flex-col">
-                    <span class="text-2xl pl-3">Logistic hub</span>
-                    <span class="pl-3 text-gray-600 text-base"
-                      >Roberta de Pielo 6,Gdansk, Poland</span
+                  <div class="flex w-full flex-col lg:flex-row lg:items-center">
+                    <div class="flex flex-col">
+                      <span class="text-2xl pl-3">Logistic hub</span>
+                      <span class="pl-3 text-gray-600 text-base"
+                        >Roberta de Pielo 6,Gdansk, Poland</span
+                      >
+                    </div>
+                    <span class="text-gray-600 pl-3 lg:pl-0 lg:pr-5 lg:ml-auto"
+                      >2023-03-27 - 2023-03-28</span
                     >
                   </div>
-                  <span class="text-gray-600 pr-5 ml-auto"
-                    >2023-03-27 - 2023-03-28</span
-                  >
                   <div class="text-gray-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
