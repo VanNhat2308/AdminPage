@@ -14,9 +14,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="all.css" />
   </head>
-  <body class="lg:px-4 lg:p-2 bg-[#f5f7fa]">
+  <body class="lg:p-2 bg-[#f5f7fa]">
 <!-- Hidden Navbar -->
-<div class="flex items-center justify-between px-6 py-4 bg-white shadow-sm navBarHiden_">
+<div class="flex items-center justify-between px-4 py-4 bg-white border-b border-gray-200 shadow-sm navBarHiden_">
   <!-- Button mở menu -->
   <button id="btnNavbar" class="p-2 rounded-lg hover:bg-gray-100 transition">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="text-gray-700" viewBox="0 0 16 16">
@@ -73,7 +73,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="dashboard.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +96,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="index.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +120,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="supplyChain.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +144,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="report.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +174,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="myCompany.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -197,7 +197,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="people.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -259,7 +259,7 @@
         </div>
       </div>
       <!-- Main Content -->
-      <div class="main_ flex-1 p-5 lg:p-4 bg-white lg:rounded-xl">
+      <div class="main_ w-full flex-1 p-5 lg:p-4 bg-white lg:rounded-xl">
   <!-- Tiêu đề -->
   <div class="mb-6">
     <h1 class="text-2xl font-bold text-gray-800">Chuỗi Cung Ứng</h1>
@@ -287,36 +287,42 @@
     <h3 class="text-lg font-semibold text-gray-700 mb-2">Trạng thái đơn hàng</h3>
    <canvas id="orderStatusChart" class="mx-auto" style="width:300px; height:300px;"></canvas>
   </div>
+
 <!-- Bảng đơn hàng gần đây -->
 <div class="bg-white shadow-sm rounded-xl overflow-x-auto">
-  <table class="min-w-max text-sm text-gray-700">
-    <thead class="bg-gray-100 text-gray-600 uppercase text-xs">
-      <tr>
-        <th class="px-4 py-3 text-left whitespace-nowrap">Mã đơn</th>
-        <th class="px-4 py-3 text-left whitespace-nowrap">Nhà cung cấp</th>
-        <th class="px-4 py-3 text-left whitespace-nowrap">Kho</th>
-        <th class="px-4 py-3 text-left whitespace-nowrap">Trạng thái</th>
-        <th class="px-4 py-3 text-left whitespace-nowrap">Ngày đặt</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="border-b hover:bg-gray-50">
-        <td class="px-4 py-3 whitespace-nowrap">#OD1234</td>
-        <td class="px-4 py-3 whitespace-nowrap">An Phát Co.</td>
-        <td class="px-4 py-3 whitespace-nowrap">Kho HN</td>
-        <td class="px-4 py-3 text-green-600 font-medium whitespace-nowrap">Đang giao</td>
-        <td class="px-4 py-3 whitespace-nowrap">2025-05-17</td>
-      </tr>
-      <tr class="border-b hover:bg-gray-50">
-        <td class="px-4 py-3 whitespace-nowrap">#OD1235</td>
-        <td class="px-4 py-3 whitespace-nowrap">Minh Phúc Ltd.</td>
-        <td class="px-4 py-3 whitespace-nowrap">Kho SG</td>
-        <td class="px-4 py-3 text-yellow-600 font-medium whitespace-nowrap">Chờ xử lý</td>
-        <td class="px-4 py-3 whitespace-nowrap">2025-05-18</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="min-w-[600px]"> <!-- Đảm bảo có chiều ngang tối thiểu cho bảng -->
+    <table class="w-full text-sm text-gray-700">
+      <thead class="bg-gray-100 text-gray-600 uppercase text-xs">
+        <tr>
+          <th class="px-4 py-3 text-left whitespace-nowrap">Mã đơn</th>
+          <th class="px-4 py-3 text-left whitespace-nowrap">Nhà cung cấp</th>
+          <th class="px-4 py-3 text-left whitespace-nowrap">Kho</th>
+          <th class="px-4 py-3 text-left whitespace-nowrap">Trạng thái</th>
+          <th class="px-4 py-3 text-left whitespace-nowrap">Ngày đặt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b hover:bg-gray-50">
+          <td class="px-4 py-3 whitespace-nowrap">#OD1234</td>
+          <td class="px-4 py-3 whitespace-nowrap">An Phát Co.</td>
+          <td class="px-4 py-3 whitespace-nowrap">Kho HN</td>
+          <td class="px-4 py-3 text-green-600 font-medium whitespace-nowrap">Đang giao</td>
+          <td class="px-4 py-3 whitespace-nowrap">2025-05-17</td>
+        </tr>
+        <tr class="border-b hover:bg-gray-50">
+          <td class="px-4 py-3 whitespace-nowrap">#OD1235</td>
+          <td class="px-4 py-3 whitespace-nowrap">Minh Phúc Ltd.</td>
+          <td class="px-4 py-3 whitespace-nowrap">Kho SG</td>
+          <td class="px-4 py-3 text-yellow-600 font-medium whitespace-nowrap">Chờ xử lý</td>
+          <td class="px-4 py-3 whitespace-nowrap">2025-05-18</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
+
+
+
 
 
 

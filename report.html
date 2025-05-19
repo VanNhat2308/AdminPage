@@ -14,21 +14,25 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="all.css" />
   </head>
-  <body class="lg:px-4 lg:p-2 bg-[#f5f7fa]">
-<!-- hidden nav -->
- <div class="flex py-4 px-6 bg-white items-center justify-between navBarHiden_">
- <div id="btnNavbar">
-  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-</svg>
- </div>
-   <div
-            class="w-8 h-8 flex justify-center items-center rounded-full bg-[#065751] text-2xl text-white shadow-xl"
-          >
-            J
-          </div>
+  <body class="lg:p-2 bg-[#f5f7fa]">
+<!-- Hidden Navbar -->
+<div class="flex items-center justify-between px-4 py-4 bg-white border-b border-gray-200 shadow-sm navBarHiden_">
+  <!-- Button mở menu -->
+  <button id="btnNavbar" class="p-2 rounded-lg hover:bg-gray-100 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="text-gray-700" viewBox="0 0 16 16">
+      <path fill-rule="evenodd"
+        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+    </svg>
+  </button>
 
- </div>
+  <!-- Avatar user -->
+  <div class="flex items-center space-x-2">
+    <div class="w-9 h-9 flex items-center justify-center bg-[#065751] text-white text-base font-semibold rounded-full shadow">
+      J
+    </div>
+    <span class="hidden sm:inline-block text-sm font-medium text-gray-700">John Doe</span>
+  </div>
+</div>
 
     <div class="flex w-full h-full lg:gap-5">
       <!-- Sidebar -->
@@ -68,7 +72,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="dashboard.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +95,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="index.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +119,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="supplyChain.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +143,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="report.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +173,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="myCompany.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +196,7 @@
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
-              href="#"
+              href="people.html"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -254,7 +258,7 @@
         </div>
       </div>
       <!-- Main Content -->
-      <div class="main_ flex-1 p-5 lg:p-4 bg-white lg:rounded-xl">
+      <div class="main_ w-full flex-1 p-5 lg:p-4 bg-white lg:rounded-xl">
         <!-- REPORT SECTION -->
 <div class="space-y-6">
   <!-- Tiêu đề -->
