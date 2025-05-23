@@ -11,40 +11,74 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- CSS Leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <!-- JS Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Routing Machine -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"
+    />
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
     <link rel="stylesheet" href="all.css" />
   </head>
   <body class="lg:p-2 bg-[#f5f7fa]">
-<!-- Hidden Navbar -->
-<div class="flex items-center justify-between px-4 py-4 bg-white border-b border-gray-200 shadow-sm navBarHiden_">
-  <!-- Button mở menu -->
-  <button id="btnNavbar" class="p-2 rounded-lg hover:bg-gray-100 transition">
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="text-gray-700" viewBox="0 0 16 16">
-      <path fill-rule="evenodd"
-        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-    </svg>
-  </button>
+    <!-- Hidden Navbar -->
+    <div
+      class="flex items-center justify-between px-4 py-4 bg-white border-b border-gray-200 shadow-sm navBarHiden_"
+    >
+      <!-- Button mở menu -->
+      <button
+        id="btnNavbar"
+        class="p-2 rounded-lg hover:bg-gray-100 transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          fill="currentColor"
+          class="text-gray-700"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          />
+        </svg>
+      </button>
 
-  <!-- Avatar user -->
-  <div class="flex items-center space-x-2">
-    <div class="w-9 h-9 flex items-center justify-center bg-[#065751] text-white text-base font-semibold rounded-full shadow">
-      J
+      <!-- Avatar user -->
+      <div class="flex items-center space-x-2">
+        <div
+          class="w-9 h-9 flex items-center justify-center bg-[#065751] text-white text-base font-semibold rounded-full shadow"
+        >
+          J
+        </div>
+        <span class="hidden sm:inline-block text-sm font-medium text-gray-700"
+          >John Doe</span
+        >
+      </div>
     </div>
-    <span class="hidden sm:inline-block text-sm font-medium text-gray-700">John Doe</span>
-  </div>
-</div>
-
-
 
     <div class="flex w-full h-full lg:gap-5">
       <!-- Sidebar -->
-      <div id="sidebar"
+      <div
+        id="sidebar"
         class="sidebar_ w-[80%] flex flex-col items-center sm:w-[50%] bg-[#094c4f] rounded-0 py-4 space-y-4 lg:rounded-xl"
       >
         <!-- Logo -->
         <div class="w-[90%] flex items-center gap-2 mx-auto lg:mx-0">
           <img class="w-17 h-20 mt-2" src="img/logoEco.png" alt="Logo" />
-          <span class="text-white font-medium text-3xl lg:text-4xl">Ecologico</span>
+          <span class="text-white font-medium text-3xl lg:text-4xl"
+            >Ecologico</span
+          >
         </div>
         <!-- Search Input -->
         <div class="mx-auto relative w-[90%] mt-5 lg:mx-0">
@@ -93,7 +127,7 @@
           </li>
 
           <li
-            class="w-full py-4  bg-[#09474a] hover:bg-[#09474a] hover:shadow-lg transition duration-300"
+            class="w-full py-4 bg-[#09474a] hover:bg-[#09474a] hover:shadow-lg transition duration-300"
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
@@ -218,9 +252,13 @@
         </ul>
         <!--  -->
         <hr class="text-gray-400 w-[90%] mx-auto lg:mx-0" />
-        <div class="order_ w-[90%] flex-column p-5 bg-[#1b6665] rounded-md mx-auto lg:mx-0" >
+        <div
+          class="order_ w-[90%] flex-column p-5 bg-[#1b6665] rounded-md mx-auto lg:mx-0"
+        >
           <div>
-            <span class="text-bold text-white text-xl lg:text-3xl">10,472 </span>
+            <span class="text-bold text-white text-xl lg:text-3xl"
+              >10,472
+            </span>
             <span class="text-white text-lg">codes available</span>
           </div>
           <button
@@ -305,33 +343,95 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-wrap gap-4 mt-10 justify-center md:justify-start">
+        <!-- tabs -->
+        <div
+          class="flex flex-wrap gap-4 mt-10 justify-center md:justify-start"
+          id="tabs"
+        >
           <button
-            class="cursor-pointer text-xl pb-4 text-[#818585] hover:text-black transition-colors"
+            class="tab-btn cursor-pointer text-xl pb-4 text-[#818585]  hover:text-black"
+            data-tab="overview"
           >
             Overview
           </button>
           <button
-            class="cursor-pointer text-xl pb-4 text-black border-b-2 border-black"
+            class="tab-btn cursor-pointer text-xl pb-4 text-black  hover:text-black transition-colors border-b-2 border-black"
+            data-tab="journey"
           >
             Journey
           </button>
           <button
-            class="cursor-pointer text-xl pb-4 text-[#818585] hover:text-black transition-colors"
+            class="tab-btn cursor-pointer text-xl pb-4 text-[#818585] hover:text-black transition-colors"
+            data-tab="transactions"
           >
             Transactions
           </button>
           <button
-            class="cursor-pointer text-xl pb-4 text-[#818585] hover:text-black transition-colors"
+            class="tab-btn cursor-pointer text-xl pb-4 text-[#818585] hover:text-black transition-colors"
+            data-tab="sustainability"
           >
             Sustainability
           </button>
           <button
-            class="cursor-pointer text-xl pb-4 text-[#818585] hover:text-black transition-colors"
+            class="tab-btn cursor-pointer text-xl pb-4 text-[#818585] hover:text-black transition-colors"
+            data-tab="components"
           >
             Components <span class="p-1 bg-gray-200 text-black">7</span>
           </button>
         </div>
+<!-- content -->
+
+<div id="tab-content">
+  <!-- overview -->
+  <div class="tab-panel hidden" data-tab="overview">
+ <div class="p-2">
+    
+
+    <!-- Title -->
+    <h1 class="text-2xl font-bold mb-2">OR-TEC 12V / 7Ah AGM Battery</h1>
+    <p class="text-gray-600 mb-6">Reliable AGM battery suitable for various automotive and backup power applications.</p>
+
+    <!-- Main content -->
+    <div class="bg-white rounded-xl shadow-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Image -->
+      <div>
+        <img src="img/battery.jpg" alt="OR-TEC Battery" class="rounded-lg w-full object-cover" />
+      </div>
+
+      <!-- Details -->
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Key Specifications</h2>
+        <ul class="text-gray-700 mb-6 space-y-2">
+          <li><strong>Voltage:</strong> 12V</li>
+          <li><strong>Capacity:</strong> 7Ah</li>
+          <li><strong>Technology:</strong> AGM (Absorbent Glass Mat)</li>
+          <li><strong>Maintenance:</strong> Maintenance-free</li>
+          <li><strong>Usage:</strong> UPS, emergency lighting, mobility devices, etc.</li>
+        </ul>
+
+        <div class="mb-4">
+          <span class="text-2xl font-bold text-green-600">$39.99</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Additional Info -->
+    <div class="mt-10 bg-white rounded-xl shadow p-6">
+      <h3 class="text-xl font-semibold mb-4">Product Description</h3>
+      <p class="text-gray-700 leading-relaxed">
+        The OR-TEC 12V 7Ah AGM battery is designed for long-lasting performance in high-demand environments.
+        With sealed construction and AGM technology, it ensures safety, reliability, and zero maintenance over its lifespan.
+        Ideal for use in automotive backup systems, alarm systems, emergency lighting, and portable power packs.
+      </p>
+    </div>
+  
+  </div>
+  </div>
+  <!--  -->
+  
+  <!-- journey tab -->
+  <div class="tab-panel" data-tab="journey">
         <div class="flex flex-col lg:flex-row mt-15 gap-10">
           <div class="flex flex-col">
             <div class="statusBar_ flex flex-col lg:flex-row gap-5">
@@ -454,13 +554,19 @@
               </div>
               <!-- ct item -->
               <div class="ml-10 mt-5">
-                <div class="flex flex-col lg:flex-row lg:items-center p-3 rounded-md bg-[#f5f7fa]">
-                  <span class="text-lg lg:text-xl">Preparing for departure</span>
+                <div
+                  class="flex flex-col lg:flex-row lg:items-center p-3 rounded-md bg-[#f5f7fa]"
+                >
+                  <span class="text-lg lg:text-xl"
+                    >Preparing for departure</span
+                  >
                   <span class="text-gray-600 pr-5 lg:ml-auto"
                     >2023-04-01 8:15</span
                   >
                 </div>
-                <div class="flex mt-2 flex-col lg:flex-row lg:items-center p-3 rounded-md bg-[#f5f7fa]">
+                <div
+                  class="flex mt-2 flex-col lg:flex-row lg:items-center p-3 rounded-md bg-[#f5f7fa]"
+                >
                   <span class="text-lg lg:text-xl"
                     >Assigned to the shelf <b>KBV567-01</b></span
                   >
@@ -468,7 +574,9 @@
                     >2023-03-28 16:01</span
                   >
                 </div>
-                <div class="flex mt-2 flex-col lg:flex-row lg:items-center p-3 rounded-md bg-[#f5f7fa]">
+                <div
+                  class="flex mt-2 flex-col lg:flex-row lg:items-center p-3 rounded-md bg-[#f5f7fa]"
+                >
                   <span class="text-lg lg:text-xl">Arrived</span>
                   <span class="text-gray-600 pr-5 lg:ml-auto"
                     >2023-03-28 15:23</span
@@ -495,11 +603,14 @@
                 </div>
                 <div class="flex w-full ml-10 items-center py-3 rounded-md">
                   <div class="flex w-full flex-col lg:flex-row lg:items-center">
-                    <span class="text-lg lg:text-xl pl-3">Local transportation</span>
+                    <span class="text-lg lg:text-xl pl-3"
+                      >Local transportation</span
+                    >
                     <span class="text-gray-600 pl-3 lg:pl-0 lg:pr-5 lg:ml-auto"
-                      >2023-03-27 - 2023-03-28</span>
+                      >2023-03-27 - 2023-03-28</span
+                    >
                   </div>
-                  
+
                   <div class="text-gray-400">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -584,7 +695,9 @@
                 </div>
                 <div class="flex w-full ml-10 items-center py-3 rounded-md">
                   <div class="flex w-full flex-col lg:flex-row lg:items-center">
-                    <span class="text-lg lg:text-xl pl-3">International transportation</span>
+                    <span class="text-lg lg:text-xl pl-3"
+                      >International transportation</span
+                    >
                     <span class="text-gray-600 pl-3 lg:pl-0 lg:pr-5 lg:ml-auto"
                       >2023-03-27 - 2023-03-28</span
                     >
@@ -671,30 +784,358 @@
 
           <!-- maps -->
           <div class="flex-1 relative basis-[220px]">
-            <img
-              class="w-full h-full cover object-cover rounded-md"
-              src="img/map.png"
-              alt=""
-            />
-            <div class="absolute text-gray-700 bottom-2 right-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus-square-fill mb-1" viewBox="0 0 16 16">
-  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
-</svg>
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-dash-square-fill" viewBox="0 0 16 16">
-  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
-</svg>
-              
+            <div
+              id="map"
+              class="w-full relative h-full cover rounded-md transition-all duration-300 ease-in-out"
+            >
+              <!-- Nút quay lại, ẩn mặc định -->
+              <div
+                id="backBtn"
+                class="hidden absolute z-10000 bg-white flex items-center p-2 rounded-md top-2 right-5 text-xs cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-x-lg"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                  />
+                </svg>
+                <span class="ml-1">Back</span>
+              </div>
             </div>
-            <div class="absolute bg-white p-2 rounded-md bottom-2 left-2 text-xs">
-              4 Expand map
+
+            <!-- Nút mở rộng -->
+            <div
+              id="expandBtn"
+              class="absolute flex items-center z-1000 bg-white p-2 rounded-md bottom-2 left-2 text-xs cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-caret-left-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"
+                />
+              </svg>
+              <span class="ml-1">expand map</span>
             </div>
           </div>
         </div>
+  </div>
+  <!--  -->
+  <!-- transactions -->
+  <div class="tab-panel hidden" data-tab="transactions">
+     <div class="max-w-5xl mx-auto p-6">
+    <!-- Tiêu đề -->
+    <h2 class="text-2xl font-bold mb-4">Transaction History</h2>
+
+    <!-- Tổng quan giao dịch -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div class="bg-white rounded-xl shadow p-4">
+        <h4 class="text-sm text-gray-500">Total Transactions</h4>
+        <p class="text-xl font-bold text-gray-800">128</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4">
+        <h4 class="text-sm text-gray-500">Total Revenue</h4>
+        <p class="text-xl font-bold text-green-600">$5,232.45</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4">
+        <h4 class="text-sm text-gray-500">Pending Orders</h4>
+        <p class="text-xl font-bold text-yellow-500">7</p>
       </div>
     </div>
 
-<script src="navbar.js"></script>
+    <!-- Bộ lọc -->
+    <div class="flex items-center mb-4">
+      <label for="filter" class="mr-2 text-sm text-gray-600">Filter by status:</label>
+      <select id="filter" class="border border-gray-300 rounded px-3 py-1 text-sm">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+        <option value="cancelled">Cancelled</option>
+      </select>
+    </div>
 
+    <!-- Bảng giao dịch -->
+    <div class="overflow-x-auto bg-white shadow rounded-xl">
+      <table class="min-w-full text-sm text-left text-gray-700">
+        <thead class="bg-gray-100 text-gray-600 uppercase text-xs">
+          <tr>
+            <th class="px-6 py-4">Date</th>
+            <th class="px-6 py-4">Order ID</th>
+            <th class="px-6 py-4">Customer</th>
+            <th class="px-6 py-4">Qty</th>
+            <th class="px-6 py-4">Total</th>
+            <th class="px-6 py-4">Status</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-4">2025-05-20</td>
+            <td class="px-6 py-4">TXN-10245</td>
+            <td class="px-6 py-4">Emily Nguyen</td>
+            <td class="px-6 py-4">3</td>
+            <td class="px-6 py-4">$119.97</td>
+            <td class="px-6 py-4 text-green-600 font-medium">✔ Completed</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-4">2025-05-18</td>
+            <td class="px-6 py-4">TXN-10234</td>
+            <td class="px-6 py-4">John Doe</td>
+            <td class="px-6 py-4">2</td>
+            <td class="px-6 py-4">$79.98</td>
+            <td class="px-6 py-4 text-green-600 font-medium">✔ Completed</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-4">2025-05-14</td>
+            <td class="px-6 py-4">TXN-10212</td>
+            <td class="px-6 py-4">Alice Smith</td>
+            <td class="px-6 py-4">1</td>
+            <td class="px-6 py-4">$39.99</td>
+            <td class="px-6 py-4 text-yellow-500 font-medium">⏳ Pending</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-4">2025-05-10</td>
+            <td class="px-6 py-4">TXN-10190</td>
+            <td class="px-6 py-4">David Lee</td>
+            <td class="px-6 py-4">4</td>
+            <td class="px-6 py-4">$159.96</td>
+            <td class="px-6 py-4 text-red-600 font-medium">✖ Cancelled</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
+    <!-- Summary -->
+    <div class="mt-6 text-sm text-gray-500">
+      Showing 1–4 of 128 transactions.
+    </div>
+  </div>
+  </div>
+  <!--  -->
+<!--sustainability  -->
+  <div class="tab-panel hidden" data-tab="sustainability">
+    <div class="max-w-5xl mx-auto p-6">
+    <!-- Tiêu đề -->
+    <h2 class="text-2xl font-bold mb-4">Sustainability & Environmental Commitment</h2>
+
+    <!-- Mô tả chính -->
+    <p class="text-gray-700 mb-6 leading-relaxed">
+      At OR-TEC, we prioritize environmental responsibility in every step of our battery production and lifecycle.
+      The 12V / 7Ah AGM Battery is designed not only for performance, but also to minimize ecological impact.
+    </p>
+
+    <!-- Danh sách các cam kết -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Cam kết 1 -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-lg font-semibold mb-2">♻️ Recyclable Materials</h3>
+        <p class="text-gray-600 text-sm">
+          All battery components are recyclable, and we support proper battery disposal and recovery programs.
+        </p>
+      </div>
+
+      <!-- Cam kết 2 -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-lg font-semibold mb-2">🌱 Low Environmental Impact</h3>
+        <p class="text-gray-600 text-sm">
+          AGM technology reduces emissions and eliminates the risk of acid leakage, making it safer for users and the planet.
+        </p>
+      </div>
+
+      <!-- Cam kết 3 -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-lg font-semibold mb-2">🏭 Eco-Friendly Manufacturing</h3>
+        <p class="text-gray-600 text-sm">
+          Our factories use energy-efficient processes and adhere to ISO 14001 environmental standards.
+        </p>
+      </div>
+
+      <!-- Cam kết 4 -->
+      <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-lg font-semibold mb-2">🔄 Extended Lifecycle</h3>
+        <p class="text-gray-600 text-sm">
+          Designed for long life and consistent performance, reducing the need for frequent replacements.
+        </p>
+      </div>
+    </div>
+
+    <!-- Lời kêu gọi hành động -->
+    <div class="mt-10 p-6 bg-green-50 border-l-4 border-green-400 rounded-lg">
+      <h4 class="text-lg font-bold text-green-800 mb-2">Join Our Green Mission</h4>
+      <p class="text-sm text-green-700">
+        Help us reduce e-waste by returning used batteries to authorized collection points.
+        Together, we can power the future sustainably.
+      </p>
+    </div>
+  </div>
+  </div>
+  <!--  -->
+  <!-- component -->
+  <div class="tab-panel hidden" data-tab="components">
+      <div class="max-w-5xl mx-auto p-6">
+    <!-- Tiêu đề -->
+    <h2 class="text-2xl font-bold mb-4">Battery Components</h2>
+
+    <!-- Mô tả tổng quan -->
+    <p class="text-gray-700 mb-6 leading-relaxed">
+      The OR-TEC 12V / 7Ah AGM Battery is composed of high-quality materials engineered for durability,
+      safety, and efficiency. Below is a breakdown of its core components:
+    </p>
+
+    <!-- Danh sách thành phần -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Component 1 -->
+      <div class="bg-white rounded-xl shadow p-5">
+        <h3 class="text-lg font-semibold mb-1">🔋 Lead Plates</h3>
+        <p class="text-sm text-gray-600">
+          High-purity lead plates increase energy density and reduce corrosion, ensuring long service life.
+        </p>
+      </div>
+
+      <!-- Component 2 -->
+      <div class="bg-white rounded-xl shadow p-5">
+        <h3 class="text-lg font-semibold mb-1">🧪 Electrolyte (AGM)</h3>
+        <p class="text-sm text-gray-600">
+          Absorbent Glass Mat (AGM) technology immobilizes the electrolyte, enhancing safety and performance.
+        </p>
+      </div>
+
+      <!-- Component 3 -->
+      <div class="bg-white rounded-xl shadow p-5">
+        <h3 class="text-lg font-semibold mb-1">🧱 ABS Plastic Casing</h3>
+        <p class="text-sm text-gray-600">
+          Rugged and flame-retardant outer casing provides structural integrity and impact resistance.
+        </p>
+      </div>
+
+      <!-- Component 4 -->
+      <div class="bg-white rounded-xl shadow p-5">
+        <h3 class="text-lg font-semibold mb-1">🛡️ Safety Valves</h3>
+        <p class="text-sm text-gray-600">
+          Built-in pressure relief valves prevent overpressure and ensure safe operation.
+        </p>
+      </div>
+
+      <!-- Component 5 -->
+      <div class="bg-white rounded-xl shadow p-5">
+        <h3 class="text-lg font-semibold mb-1">🔌 Terminals</h3>
+        <p class="text-sm text-gray-600">
+          Corrosion-resistant terminals ensure reliable electrical connections and easy installation.
+        </p>
+      </div>
+
+      <!-- Component 6 -->
+      <div class="bg-white rounded-xl shadow p-5">
+        <h3 class="text-lg font-semibold mb-1">🌡️ Separator</h3>
+        <p class="text-sm text-gray-600">
+          High-quality fiberglass separator prevents short circuits and enhances electrolyte distribution.
+        </p>
+      </div>
+    </div>
+
+    <!-- Chú thích -->
+    <div class="mt-6 text-sm text-gray-500 italic">
+      All components comply with international safety and environmental standards.
+    </div>
+  </div>
+  </div>
+  <!--  -->
+</div>
+
+    
+      </div>
+    </div>
+
+    <script src="navbar.js"></script>
+
+    <script>
+      var map = L.map("map", {
+        center: [21.0285, 105.8542], // Hà Nội
+        zoom: 13,
+        zoomControl: false, // Tắt nút zoom mặc định
+      });
+
+      // Bản đồ nền grayscale
+      L.tileLayer(
+        "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        {
+          attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+          subdomains: "abcd",
+          maxZoom: 19,
+        }
+      ).addTo(map);
+
+      // Thêm nút zoom ở góc dưới bên phải
+      L.control.zoom({ position: "bottomright" }).addTo(map);
+
+      // Gọi plugin định tuyến
+      L.Routing.control({
+        waypoints: [
+          L.latLng(21.0285, 105.8542), // Hồ Gươm
+          L.latLng(21.028, 105.85), // Bưu điện Hà Nội
+        ],
+        routeWhileDragging: true,
+        show: false,
+        createMarker: function (i, wp, n) {
+          if (i === 0) {
+            // Điểm bắt đầu: icon SVG như bạn muốn
+            return L.marker(wp.latLng, {
+              icon: L.divIcon({
+                className: "",
+                html: `<div
+                  class="w-10 h-10 rounded-full bg-[#373e4f] text-white flex justify-center items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    class="bi bi-house-door"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z"
+                    />
+                  </svg>
+                </div>`,
+                iconSize: [30, 30],
+                iconAnchor: [15, 30],
+              }),
+              draggable: true,
+            });
+          } else {
+            // Các điểm khác: chấm tròn nhỏ đơn giản
+            return L.marker(wp.latLng, {
+              icon: L.divIcon({
+                className: "",
+                html: `<div style="width: 23px; height: 23px; background: white; border-radius: 50%; border: 3px solid #a4a8b3;"></div>`,
+                iconSize: [12, 12],
+                iconAnchor: [6, 6],
+              }),
+              draggable: true,
+            });
+          }
+        },
+        lineOptions: {
+          styles: [{ color: "#a4a8b3", weight: 4 }],
+        },
+
+        collapsible: true, // ẩn panel bằng cách thu nhỏ, cũng không hiện
+        draggableWaypoints: true,
+        addWaypoints: false, // Không cho thêm điểm mới
+      }).addTo(map);
+    </script>
+    <script src="expand.js"></script>
+    <script src="tab.js"></script>
   </body>
 </html>
