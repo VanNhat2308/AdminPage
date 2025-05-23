@@ -62,8 +62,7 @@
           J
         </div>
         <span class="hidden sm:inline-block text-sm font-medium text-gray-700"
-          >John Doe</span
-        >
+          >John Doe</span>
       </div>
     </div>
 
@@ -261,7 +260,7 @@
             </span>
             <span class="text-white text-lg">codes available</span>
           </div>
-          <button
+          <button onclick="window.location.href='orderMore.html'"
             class="p-4 w-full rounded-md bg-white mt-3 cursor-pointer font-medium text-xl lg:text-2xl"
           >
             order more
@@ -1081,8 +1080,11 @@
       // Gọi plugin định tuyến
       L.Routing.control({
         waypoints: [
-          L.latLng(21.0285, 105.8542), // Hồ Gươm
-          L.latLng(21.028, 105.85), // Bưu điện Hà Nội
+          // L.latLng(21.0285, 105.8542), 
+          // L.latLng(21.028, 105.85), 
+             L.latLng(51.2465, 22.5684),   // Lublin, Poland
+             L.latLng(54.3520, 18.6466),   // Gdańsk, Poland
+             L.latLng(53.8655, 10.6866)    // Lübeck, Germany
         ],
         routeWhileDragging: true,
         show: false,

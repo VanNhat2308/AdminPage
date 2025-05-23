@@ -34,6 +34,7 @@
   </div>
 </div>
 
+
     <div class="flex w-full h-full lg:gap-5">
       <!-- Sidebar -->
       <div id="sidebar"
@@ -139,7 +140,7 @@
           </li>
 
           <li
-            class="w-full py-4 bg-[#09474a] hover:bg-[#09474a] hover:shadow-lg transition duration-300"
+            class="w-full py-4 hover:bg-[#09474a] hover:shadow-lg transition duration-300"
           >
             <a
               class="w-[90%] mx-auto decoration-none flex items-center gap-3 text-white text-xl lg:text-2xl"
@@ -221,7 +222,7 @@
             <span class="text-bold text-white text-xl lg:text-3xl">10,472 </span>
             <span class="text-white text-lg">codes available</span>
           </div>
-          <button  onclick="window.location.href='orderMore.html'"
+          <button
             class="p-4 w-full rounded-md bg-white mt-3 cursor-pointer font-medium text-xl lg:text-2xl"
           >
             order more
@@ -258,79 +259,97 @@
         </div>
       </div>
       <!-- Main Content -->
-      <div class="main_ w-full flex-1 p-5 lg:p-4 bg-white lg:rounded-xl">
-        <!-- REPORT SECTION -->
-<div class="space-y-6">
-  <!-- Tiêu đề -->
-  <div>
-    <h2 class="text-2xl font-semibold text-gray-800">Báo cáo tổng quan</h2>
-    <p class="text-sm text-gray-500">Tình hình hoạt động kinh doanh</p>
-  </div>
+          <div class="main_ flex-1 p-5 lg:p-4 bg-white lg:rounded-xl">
+<div class="max-w-4xl mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-4">OR-TEC 12V / 7Ah AGM Battery</h1>
+  <p class="text-gray-600 mb-6">Place an order for additional batteries with shipping and payment details below.</p>
 
-  <!-- Cards thống kê -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-    <div class="p-4 bg-blue-50 rounded-xl">
-      <p class="text-sm text-gray-500">Tổng đơn hàng</p>
-      <p class="text-xl font-semibold text-blue-600">1,245</p>
-    </div>
-    <div class="p-4 bg-green-50 rounded-xl">
-      <p class="text-sm text-gray-500">Tổng doanh thu</p>
-      <p class="text-xl font-semibold text-green-600">₫58,200,000</p>
-    </div>
-    <div class="p-4 bg-yellow-50 rounded-xl">
-      <p class="text-sm text-gray-500">Khách hàng mới</p>
-      <p class="text-xl font-semibold text-yellow-600">362</p>
-    </div>
-    <div class="p-4 bg-red-50 rounded-xl">
-      <p class="text-sm text-gray-500">Hoàn đơn</p>
-      <p class="text-xl font-semibold text-red-600">42</p>
-    </div>
-  </div>
-
-  <!-- Biểu đồ -->
-  <div class="bg-white shadow rounded-xl p-4">
-    <h3 class="text-lg font-medium text-gray-700 mb-4">Doanh thu theo tháng</h3>
-    <canvas id="revenueChart" class="w-full h-64"></canvas>
-  </div>
-</div>
-
+  <form class="bg-white shadow-xl rounded-xl p-6 space-y-6" id="orderForm">
+    <!-- Thông tin sản phẩm -->
+    <div class="flex flex-col lg:flex-row gap-6">
+      <img src="img/battery.jpg" alt="Battery" class="w-32 h-32 object-cover rounded" />
+      <div>
+        <h2 class="text-xl font-semibold mb-1">OR-TEC 12V / 7Ah AGM Battery</h2>
+        <p class="text-gray-600 text-sm">SKU: OR-AGM1270</p>
+        <p class="text-gray-600 text-sm">Warranty: 12 months</p>
+        <p class="text-gray-700 text-sm mt-2">
+          Reliable AGM battery for UPS, emergency systems, and mobility devices.
+        </p>
+        <p class="mt-3 text-green-600 font-bold text-lg">$39.99 <span class="text-sm text-gray-500">(per unit)</span></p>
       </div>
     </div>
 
+    <!-- Số lượng và tổng tiền -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label for="quantity" class="block text-sm font-medium mb-1">Quantity</label>
+        <input type="number" id="quantity" name="quantity" min="1" value="1"
+          class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Total Price</label>
+        <div class="text-lg font-semibold text-green-700 pt-2" id="totalPrice">$39.99</div>
+      </div>
+    </div>
+
+    <!-- Thông tin người nhận -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Shipping Information</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm mb-1">Full Name</label>
+          <input type="text" required class="w-full border border-gray-300 px-3 py-2 rounded" />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Phone Number</label>
+          <input type="tel" required class="w-full border border-gray-300 px-3 py-2 rounded" />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm mb-1">Shipping Address</label>
+          <textarea rows="3" required class="w-full border border-gray-300 px-3 py-2 rounded"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phương thức thanh toán -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Payment Method</h3>
+      <div class="space-y-2">
+        <label class="flex items-center gap-2">
+          <input type="radio" name="payment" value="cod" checked class="text-blue-600" />
+          <span>Cash on Delivery</span>
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" name="payment" value="bank" class="text-blue-600" />
+          <span>Bank Transfer</span>
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" name="payment" value="credit" class="text-blue-600" />
+          <span>Credit Card</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Ghi chú -->
+    <div>
+      <label class="block text-sm font-medium mb-1">Additional Notes</label>
+      <textarea rows="2" class="w-full border border-gray-300 px-3 py-2 rounded"></textarea>
+    </div>
+
+    <!-- Nút đặt hàng -->
+    <div class="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between items-center mt-4">
+      <p class="text-sm text-gray-500">You will receive an email confirmation once the order is processed.</p>
+      <button type="submit"
+        class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition">Place Order</button>
+    </div>
+  </form>
+</div>
+
+          </div>
+    </div>
+
 <script src="navbar.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  const ctxRevenue = document.getElementById('revenueChart').getContext('2d');
-  new Chart(ctxRevenue, {
-    type: 'line',
-    data: {
-      labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6'],
-      datasets: [{
-        label: 'Doanh thu (VND)',
-        data: [8200000, 9400000, 12000000, 9800000, 10500000, 11600000],
-        borderColor: '#3b82f6',
-        backgroundColor: 'rgba(59,130,246,0.1)',
-        tension: 0.4,
-        fill: true,
-        pointRadius: 4,
-        pointBackgroundColor: '#3b82f6'
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          display: false
-        }
-      },
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
+<script src="orderMore.js"></script>
 
 
   </body>
